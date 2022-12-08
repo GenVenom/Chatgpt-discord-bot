@@ -1,7 +1,13 @@
 from revChatGPT.revChatGPT import Chatbot
 
-def get_response(prompt):
+config = {
+    "email": "email-here",
+    "password": "pwd-here",
+   
+}
 
-    reply = chatbot.get_chat_response(prompt)
+chatbot = Chatbot(config, conversation_id=None)
 
+def get_response(message):
+    reply = chatbot.get_chat_response(message)
     return(reply['message'])
