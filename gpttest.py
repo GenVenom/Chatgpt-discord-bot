@@ -1,9 +1,7 @@
-import os
-import openai
-openai.api_key = os.getenv("OPENAI_API_KEY")
+from revChatGPT.revChatGPT import Chatbot
 
 def get_response(prompt):
 
-    response = openai.Completion.create(model="text-davinci-003", prompt=prompt, temperature=0, max_tokens=4000)
+    reply = chatbot.get_chat_response("How do u make turkish coffee")
 
-    return(response['choices'][0]['text'].strip())
+    return(reply['message'])
